@@ -30,7 +30,17 @@ public class User extends GenericModel<User,UserDTO> {
 	public void mapFromCorrespondingDTO(UserDTO dtoObject) {
 		
 		BeanUtils.copyProperties(dtoObject,this);
+		this.createdAt = dtoObject.getCreatedTime();
 		
+	}
+
+
+	@Override
+	public UserDTO mapToCorrespondingDTO() {
+		UserDTO dto = new UserDTO();
+		BeanUtils.copyProperties(this,dto);
+		dto.setCreatedTime(createdAt);
+		return dto;
 	}
 
 }

@@ -16,6 +16,6 @@ public class UserDTO {
 	 private String name;
 	 private String surname;
 	 private List<Integer> followerList = new ArrayList<>();
-	 private Timestamp createdAt;
+	 private Timestamp createdTime;
 	
 }
