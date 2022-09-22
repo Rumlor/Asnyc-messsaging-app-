@@ -4,9 +4,12 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
+
+import com.sixtyone.server.dtos.UserDTO;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,12 +17,20 @@ import lombok.Setter;
 @Table("sixty_one_app_table_first")
 @Getter
 @Setter
-public class User {
+public class User extends GenericModel<User,UserDTO> {
 	
 	@PrimaryKey @Column private int id;
 	@Column private String name;
 	@Column private String surname;
 	@Column private List<Integer> followerList = new ArrayList<>();
 	@Column private Timestamp createdAt;
+	
+	
+	@Override
+	public void mapFromCorrespondingDTO(UserDTO dtoObject) {
+		
+		BeanUtils.copyProperties(dtoObject,this);
+		
+	}
 
 }
