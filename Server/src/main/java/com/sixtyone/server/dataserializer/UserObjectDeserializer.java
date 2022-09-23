@@ -11,12 +11,11 @@ import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sixtyone.server.dtos.UserDTO;
 
-@Component
+
 public class UserObjectDeserializer implements Deserializer<UserDTO>{
 
 	
-	@Autowired
-	private ObjectMapper mapper;
+	private ObjectMapper mapper = new ObjectMapper();
 	
 	@Override
 	public UserDTO deserialize(String topic, byte[] data) {
