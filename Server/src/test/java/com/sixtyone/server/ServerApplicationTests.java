@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.kafka.core.KafkaTemplate;
 
 import com.sixtyone.server.model.User;
 import com.sixtyone.server.services.UserDAOService;
@@ -17,23 +18,7 @@ import com.sixtyone.server.services.UserDAOService;
 class ServerApplicationTests {
 	
 	
-	@Autowired
-	private UserDAOService userDAOService;
-	
-	@Test
-	public void insertNewTest() {
-		User user = new User();
-		user.setId(12);
-		user.setName("rumlor");
-		user.setSurname("zendar");
-		user.setCreatedAt(Timestamp.from(Instant.now()));
-		user.setFollowerList(List.of(3,12));
-		assertDoesNotThrow(()->userDAOService.insertNewUser(user.mapToCorrespondingDTO()));
-	}
-	
-	
-	@Test
-	void contextLoads() {
-	}
+
+
 
 }
