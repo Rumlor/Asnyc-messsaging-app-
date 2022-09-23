@@ -4,14 +4,18 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 import com.sixtyone.server.configuration.resourceproperties.CassandraDataConfigProperties;
 
 @Configuration
 @EnableConfigurationProperties(CassandraDataConfigProperties.class)
+@EnableCassandraRepositories(basePackages = "com.sixtyone.server.repositoriess")
+@ComponentScan("com.sixtyone.server.repositoriess")
 public class CassandraDataConfiguration extends AbstractCassandraConfiguration{
 	
 	

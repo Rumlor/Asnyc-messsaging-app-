@@ -9,4 +9,5 @@ import com.sixtyone.server.model.User;
 
 public interface UserRepository extends CassandraRepository<User, Integer> {
 
+	
 }

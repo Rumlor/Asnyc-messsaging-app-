@@ -20,9 +20,11 @@ public class UserController {
 
 	private UserDAOService userDAOService;
 	
+
 	
 	public UserController (UserDAOService service) {
 		this.userDAOService = service;
+
 	}
 	@PostMapping(path = "/new")
 	public ResponseEntity< Map<String,Object> > postNewUser(@RequestBody UserDTO user) {
@@ -33,7 +35,6 @@ public class UserController {
 	@GetMapping(path = "{id}")
 	public ResponseEntity<UserDTO> getUser(@PathVariable(value = "id") Integer id){
 		return	ResponseEntity.ok(userDAOService.getUserFrom(id));
-	
 	}
-	
+
 }

@@ -7,4 +7,5 @@ public interface UserDAOService {
 	void insertNewUser (UserDTO userDTO);
 	
 	UserDTO getUserFrom(int id);
+	
 }

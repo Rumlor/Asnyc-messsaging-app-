@@ -6,9 +6,7 @@ import java.util.logging.Logger;
 
 import org.springframework.stereotype.Repository;
 
-
 import com.sixtyone.server.dtos.UserDTO;
-import com.sixtyone.server.dtos.objectmapper.UserMapper;
 import com.sixtyone.server.model.User;
 import com.sixtyone.server.repositoriess.UserRepository;
 import com.sixtyone.server.services.UserDAOService;
@@ -36,7 +34,7 @@ public class UserDAOServiceImpl  implements UserDAOService{
 	public UserDTO getUserFrom(int id) {
 		
 		Optional<User> user =  repository.findById(id);
-		AtomicReference<UserDTO> dto = new AtomicReference();
+		AtomicReference<UserDTO> dto = new AtomicReference<>();
 		
 		user.ifPresentOrElse(userLambda-> dto.set(userLambda.mapToCorrespondingDTO()) , 
 						()-> new RuntimeException("User not found."));
