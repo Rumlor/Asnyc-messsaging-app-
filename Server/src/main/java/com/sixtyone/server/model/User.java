@@ -37,7 +37,7 @@ public class User extends GenericModel<User,UserDTO> {
 
 	@Override
 	public UserDTO mapToCorrespondingDTO() {
-		UserDTO dto = new UserDTO();
+		UserDTO dto = UserDTO.builder().build();
 		BeanUtils.copyProperties(this,dto);
 		dto.setCreatedTime(createdAt);
 		return dto;
