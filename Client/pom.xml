@@ -19,8 +19,11 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
 	<dependencies>
-		
+		  <groupId>com.sixtyone.common</groupId>
+		  <artifactId>commonLib</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
 	</dependencies>
 
 	<build>

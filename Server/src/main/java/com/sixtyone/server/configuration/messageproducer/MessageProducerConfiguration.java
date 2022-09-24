@@ -45,8 +45,5 @@ public class MessageProducerConfiguration {
 		return new KafkaTemplate<>(demoProducerFactory());
 	}
 	
-	@Bean
-	public ObjectMapper serializer() {
-		return new ObjectMapper();
-	}
+
 }
