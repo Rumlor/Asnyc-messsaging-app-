@@ -53,6 +53,8 @@ public class MainIntegrationTest {
 				.id(61).build();
 		
 		template.send("usertopic",dto);
+		dto.setName("emirhan");
+		template.send("usertopic",dto);
 	}
 
 	

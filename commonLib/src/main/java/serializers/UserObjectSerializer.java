@@ -1,11 +1,10 @@
 package serializers;
 
+import org.apache.commons.lang3.SerializationUtils;
 import org.apache.kafka.common.serialization.Serializer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import dtos.UserDTO;
 
 
@@ -26,16 +25,11 @@ public class UserObjectSerializer implements Serializer<UserDTO>{
 		if (data == null ) {
 			return array;
 		}
-		try {
 		
-			array = serializer.writeValueAsBytes(data);
+		return SerializationUtils.serialize(data);
 		
-		} catch (JsonProcessingException e) {
-			System.out.println("An error was encountered during serialization.");
-			e.printStackTrace();
-		}
+	
 		
-		return array;
 	}
 
 }

@@ -30,7 +30,7 @@ public class MessageProducerConfiguration {
 	@Bean
 	public ProducerFactory<String,UserDTO> demoProducerFactory(){
 		
-		System.out.println("PROPERTY!"+properties.getBrokerBootstrapAddress());
+		System.out.println("Kafka bootstrap server address: "+properties.getBrokerBootstrapAddress());
 		Map<String,Object> configProps = new HashMap<>();
 
 		configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,properties.getBrokerBootstrapAddress());
