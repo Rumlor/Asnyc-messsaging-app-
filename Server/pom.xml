@@ -24,6 +24,15 @@
 	
 	
 	<dependencies>
+	
+
+	<!-- common lib(models,dtos , data serializers-->
+	<dependency>  
+ <groupId>com.sixtyone.common</groupId>
+  <artifactId>commonLib</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+
 	<!-- dependencies are inherited from parent-->
 	</dependencies>
 

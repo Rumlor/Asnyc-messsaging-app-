@@ -1,4 +1,4 @@
-package com.sixtyone.server.dataserializer;
+package serializers;
 
 import org.apache.kafka.common.serialization.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sixtyone.server.dtos.UserDTO;
+import dtos.UserDTO;
 
 
 public class UserObjectSerializer implements Serializer<UserDTO>{

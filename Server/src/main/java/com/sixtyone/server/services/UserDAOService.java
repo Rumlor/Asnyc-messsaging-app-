@@ -1,6 +1,6 @@
 package com.sixtyone.server.services;
 
-import com.sixtyone.server.dtos.UserDTO;
+import dtos.UserDTO;
 
 public interface UserDAOService {
 	

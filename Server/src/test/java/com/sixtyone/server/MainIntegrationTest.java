@@ -23,7 +23,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import com.sixtyone.server.configuration.CassandraDataConfiguration;
 import com.sixtyone.server.configuration.messageproducer.MessageProducerConfiguration;
-import com.sixtyone.server.dtos.UserDTO;
+import dtos.*;
 import com.sixtyone.server.repositoriess.UserRepository;
 
 @SpringBootTest(classes = MessageProducerConfiguration.class)

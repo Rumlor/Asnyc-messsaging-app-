@@ -15,8 +15,8 @@ import org.springframework.kafka.core.ProducerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sixtyone.server.configuration.resourceproperties.KafkaProducerConfigProperties;
-import com.sixtyone.server.dataserializer.UserObjectSerializer;
-import com.sixtyone.server.dtos.UserDTO;
+import serializers.*;
+import dtos.UserDTO;
 
 
 @Configuration

@@ -18,9 +18,9 @@
   
   <modules>
   <!-- Sub module for client-->
-  <module>ClientApp</module>
+  <module>commonLib</module>
   <!-- sub module for server-->
-  <module>ServerApp</module>
+  <module>server</module>
   
   </modules>
   

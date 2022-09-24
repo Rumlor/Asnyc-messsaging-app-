@@ -6,11 +6,11 @@ import java.util.logging.Logger;
 
 import org.springframework.stereotype.Repository;
 
-import com.sixtyone.server.dtos.UserDTO;
-import com.sixtyone.server.model.User;
 import com.sixtyone.server.repositoriess.UserRepository;
 import com.sixtyone.server.services.UserDAOService;
 
+import dtos.UserDTO;
+import models.User;
 
 @Repository
 public class UserDAOServiceImpl  implements UserDAOService{

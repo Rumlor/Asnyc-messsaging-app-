@@ -1,4 +1,4 @@
-package com.sixtyone.server.model;
+package models;
 
 public abstract class GenericModel<MODEL,DTO> {
 	

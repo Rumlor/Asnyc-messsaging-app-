@@ -1,4 +1,4 @@
-package com.sixtyone.server.dtos;
+package dtos;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
