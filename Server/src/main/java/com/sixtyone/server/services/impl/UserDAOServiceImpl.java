@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sixtyone.server.repositoriess.UserRepository;
 import com.sixtyone.server.services.UserDAOService;
+import com.sixtyone.server.services.UserEventProducer;
 
 import dtos.UserDTO;
 import models.User;
@@ -16,9 +17,11 @@ import models.User;
 public class UserDAOServiceImpl  implements UserDAOService{
 
 	private UserRepository repository;
+	private UserEventProducer eventProducer;
 	private static final Logger LOGGER = Logger.getLogger(UserDAOServiceImpl.class.getName());
 	
-	public UserDAOServiceImpl(UserRepository repository) {
+	public UserDAOServiceImpl(UserRepository repository,UserEventProducer producer) {
+		this.eventProducer = producer;
 		this.repository = repository;
 	}
 	
@@ -28,6 +31,7 @@ public class UserDAOServiceImpl  implements UserDAOService{
 		User userToBeSaved = new User();
 		userToBeSaved.mapFromCorrespondingDTO(userDTO);
 		repository.save(userToBeSaved);
+		eventProducer.sendEventDetail(userDTO);
 	}
 
 	@Override

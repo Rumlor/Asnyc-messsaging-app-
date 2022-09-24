@@ -29,7 +29,7 @@ public class UserController {
 	@PostMapping(path = "/new")
 	public ResponseEntity< Map<String,Object> > postNewUser(@RequestBody UserDTO user) {
 		userDAOService.insertNewUser(user);
-		return  ResponseEntity.ok(Map.of("success",true,"message","User saved succesfully"));
+		return  ResponseEntity.ok(Map.of("success",true,"message","User saved succesfully and details sent to consumer"));
 	}
 	
 	@GetMapping(path = "{id}")
