@@ -2,11 +2,9 @@ package com.sixtyone.consumer.service.impl;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.Random;
 import java.util.random.RandomGenerator;
 
 import org.springframework.stereotype.Service;
-import org.springframework.util.IdGenerator;
 
 import com.sixtyone.consumer.service.UserFollowerService;
 

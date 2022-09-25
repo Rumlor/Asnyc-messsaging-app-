@@ -22,8 +22,14 @@ public class CassandraDataConfiguration extends AbstractCassandraConfiguration{
 	
 	
 	
-	private CassandraDataConfigProperties properties;
-		
+	private CassandraDataConfigProperties properties;	
+	
+	@Autowired
+	public void setProperties(CassandraDataConfigProperties properties) {
+		log
+		.info("Cassandra Data Configurations are initilizing. properties are injected: contact-points{},keyspace-name:{}",properties.getContactPoints(),properties.getKeySpace());
+		this.properties = properties;
+	}
 
 	@Override
 	protected String getKeyspaceName() {
@@ -52,12 +58,7 @@ public class CassandraDataConfiguration extends AbstractCassandraConfiguration{
 		return new String[] {User.class.getPackage().getName()};
 	}
 	
-	@Autowired
-	public void setProperties(CassandraDataConfigProperties properties) {
-		log
-		.info("Cassandra Data Configurations are initilizing. properties are injected: contact-points{},keyspace-name:{}",properties.getContactPoints(),properties.getKeySpace());
-		this.properties = properties;
-	}
+
 	
 
 	
