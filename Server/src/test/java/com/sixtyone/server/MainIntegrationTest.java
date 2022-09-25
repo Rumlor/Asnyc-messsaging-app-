@@ -21,12 +21,11 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 
-import com.sixtyone.server.configuration.CassandraDataConfiguration;
-import com.sixtyone.server.configuration.messageproducer.MessageProducerConfiguration;
+import configs.producer.ProducerConfiguration;
 import dtos.*;
-import com.sixtyone.server.repositoriess.UserRepository;
 
-@SpringBootTest(classes = MessageProducerConfiguration.class)
+
+@SpringBootTest(classes = ProducerConfiguration.class)
 public class MainIntegrationTest {
 
 	@Autowired
@@ -40,7 +39,7 @@ public class MainIntegrationTest {
 	
 	@Test
 	public void sendFirstMessage() {
-		//assertDoesNotThrow( ()-> template.send("usertopic","First Message from test") );
+		assertDoesNotThrow(()->template.send("usertopic",UserDTO.builder().build()));
 	}
 	
 	@Test

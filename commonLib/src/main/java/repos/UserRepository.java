@@ -1,4 +1,4 @@
-package com.sixtyone.server.repositoriess;
+package repos;
 
 import java.util.List;
 

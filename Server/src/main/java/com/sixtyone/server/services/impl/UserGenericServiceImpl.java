@@ -7,12 +7,12 @@ import java.util.logging.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.sixtyone.server.repositoriess.UserRepository;
 import com.sixtyone.server.services.UserGenericService;
 import com.sixtyone.server.services.UserEventProducer;
 
 import dtos.UserDTO;
 import models.User;
+import repos.UserRepository;
 
 @Service
 public class UserGenericServiceImpl  implements UserGenericService{
