@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import dtos.UserDTO;
-import com.sixtyone.server.services.UserDAOService;
+import com.sixtyone.server.services.UserGenericService;
 
 @RestController
 @RequestMapping(path = "/users",consumes = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
-	private UserDAOService userDAOService;
+	private UserGenericService userDAOService;
 	
 
 	
-	public UserController (UserDAOService service) {
+	public UserController (UserGenericService service) {
 		this.userDAOService = service;
 
 	}

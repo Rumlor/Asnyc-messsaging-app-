@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.core.KafkaTemplate;
 
 import models.*;
-import com.sixtyone.server.services.UserDAOService;
+import com.sixtyone.server.services.UserGenericService;
 
 @SpringBootTest
 class ServerApplicationTests {

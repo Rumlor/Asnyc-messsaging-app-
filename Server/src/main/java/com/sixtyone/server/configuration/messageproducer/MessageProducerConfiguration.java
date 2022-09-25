@@ -12,8 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sixtyone.server.configuration.resourceproperties.KafkaProducerConfigProperties;
 import serializers.*;
 import dtos.UserDTO;
@@ -26,7 +24,7 @@ public class MessageProducerConfiguration {
 	@Autowired
 	private KafkaProducerConfigProperties properties;
 	
-	
+	//Check if this method should return a bean !!
 	@Bean
 	public ProducerFactory<String,UserDTO> demoProducerFactory(){
 		

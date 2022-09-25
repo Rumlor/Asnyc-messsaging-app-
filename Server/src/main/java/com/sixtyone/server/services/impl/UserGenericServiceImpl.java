@@ -5,22 +5,23 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.sixtyone.server.repositoriess.UserRepository;
-import com.sixtyone.server.services.UserDAOService;
+import com.sixtyone.server.services.UserGenericService;
 import com.sixtyone.server.services.UserEventProducer;
 
 import dtos.UserDTO;
 import models.User;
 
-@Repository
-public class UserDAOServiceImpl  implements UserDAOService{
+@Service
+public class UserGenericServiceImpl  implements UserGenericService{
 
 	private UserRepository repository;
 	private UserEventProducer eventProducer;
-	private static final Logger LOGGER = Logger.getLogger(UserDAOServiceImpl.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(UserGenericServiceImpl.class.getName());
 	
-	public UserDAOServiceImpl(UserRepository repository,UserEventProducer producer) {
+	public UserGenericServiceImpl(UserRepository repository,UserEventProducer producer) {
 		this.eventProducer = producer;
 		this.repository = repository;
 	}

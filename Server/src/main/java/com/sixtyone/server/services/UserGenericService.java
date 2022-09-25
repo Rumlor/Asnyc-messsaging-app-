@@ -2,7 +2,7 @@ package com.sixtyone.server.services;
 
 import dtos.UserDTO;
 
-public interface UserDAOService {
+public interface UserGenericService {
 	
 	void insertNewUser (UserDTO userDTO);
 	

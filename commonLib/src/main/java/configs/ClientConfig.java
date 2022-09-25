@@ -32,12 +32,15 @@ public class ClientConfig {
 		configProps.put(ConsumerConfig.GROUP_ID_CONFIG,ConsumerConfigProperties.GROUP_ID_CLIENT.getEnumVal());
 		configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);
 		configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,UserObjectDeserializer.class);
+		//commits latest offset that is read by consumer and will start fetching if there is data available after that offset.
+		configProps.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+		//start reading from first message.
+		configProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 		return new DefaultKafkaConsumerFactory<>(configProps);
 	}
 	
 	@Bean
 	public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String,UserDTO>> listenerFactory(){
-		
 		ConcurrentKafkaListenerContainerFactory<String,UserDTO> 
 				concurrentKafkaListenerContainerFactory =
 						new ConcurrentKafkaListenerContainerFactory<>();

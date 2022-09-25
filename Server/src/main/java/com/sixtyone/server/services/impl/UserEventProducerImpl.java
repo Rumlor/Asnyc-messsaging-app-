@@ -28,8 +28,8 @@ public class UserEventProducerImpl implements UserEventProducer{
 	
 	public UserEventProducerImpl(KafkaTemplate<String, UserDTO> producer) {
 		this.producer = producer;
-		this.successCallBack = new SuccessCallBackForEvent();
-		this.failureCallBack = new FailureCallBackForEvent();
+		this.successCallBack = this. new SuccessCallBackForEvent();
+		this.failureCallBack = this. new FailureCallBackForEvent();
 	}
 
 
